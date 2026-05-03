@@ -2,3 +2,7 @@ node_modules/
 dist/
 .env
 *.js.map
+
+# Local AI tool configs
+.agents/
+.claude/
