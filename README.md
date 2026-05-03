@@ -1,12 +1,12 @@
-# avalanche-mcp-server
+# @dedanzi/avalanche-mcp-server
 
-[![npm version](https://img.shields.io/npm/v/avalanche-mcp-server)](https://www.npmjs.com/package/avalanche-mcp-server)
+[![npm version](https://img.shields.io/npm/v/@dedanzi/avalanche-mcp-server)](https://www.npmjs.com/package/@dedanzi/avalanche-mcp-server)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Retro9000](https://img.shields.io/badge/Retro9000-Tooling-red)](https://retro9000.avax.network)
 
-MCP server that gives AI agents live access to Avalanche network data — L1 stats, ICM messages, ICTT transfers, validator info, and L1 deployment scaffolding.
+MCP server that gives AI agents live access to Avalanche network data - L1 stats, ICM messages, ICTT transfers, validator info, and L1 deployment scaffolding.
 
-Part of the [Avalanche Developer AI Toolkit](https://github.com/your-username/avalanche_agent_skills).
+Part of the [Avalanche Developer AI Toolkit](https://github.com/mzf11125/avalanche_agent_skills).
 
 ## Quick Start
 
@@ -19,7 +19,7 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS)
   "mcpServers": {
     "avalanche": {
       "command": "npx",
-      "args": ["avalanche-mcp-server"],
+      "args": ["-y", "@dedanzi/avalanche-mcp-server"],
       "env": {
         "AVACLOUD_API_KEY": "your-key-here"
       }
@@ -37,15 +37,26 @@ Restart Claude Desktop. You can now ask:
 ### Run Directly
 
 ```bash
-npx avalanche-mcp-server
+npx @dedanzi/avalanche-mcp-server
 ```
 
 ### Install Globally
 
 ```bash
-npm install -g avalanche-mcp-server
+npm install -g @dedanzi/avalanche-mcp-server
 avalanche-mcp-server
 ```
+
+## Getting an AvaCloud API Key
+
+All 13 tools work without an API key using public endpoints. An AvaCloud API key unlocks higher rate limits and additional data fields on network, ICM, and ICTT tools.
+
+1. Go to [avacloud.io](https://avacloud.io) and sign up for a free account
+2. In the AvaCloud console, navigate to **Settings** > **API Keys**
+3. Click **Create API Key**, give it a name, and copy the key
+4. Set it as `AVACLOUD_API_KEY` in your MCP config env (see Quick Start above) or in a `.env` file
+
+The free tier includes rate limits sufficient for development and testing.
 
 ## Tools (13 total)
 
@@ -84,13 +95,11 @@ avalanche-mcp-server
 
 ## Configuration
 
-All tools work without any API key using public endpoints.
-
 ```env
-# Optional — higher rate limits and additional data
+# Optional - higher rate limits and additional data (get key at avacloud.io)
 AVACLOUD_API_KEY=
 
-# Optional — override RPC endpoints
+# Optional - override default RPC endpoints
 AVAX_MAINNET_RPC=https://api.avax.network/ext/bc/C/rpc
 AVAX_FUJI_RPC=https://api.avax-test.network/ext/bc/C/rpc
 
@@ -98,8 +107,6 @@ AVAX_FUJI_RPC=https://api.avax-test.network/ext/bc/C/rpc
 DEFAULT_NETWORK=mainnet
 REQUEST_TIMEOUT_MS=10000
 ```
-
-Get a free AvaCloud API key at [avacloud.io](https://avacloud.io).
 
 ## Example Interactions
 
@@ -115,7 +122,7 @@ Get a free AvaCloud API key at [avacloud.io](https://avacloud.io).
 ## Development
 
 ```bash
-git clone https://github.com/your-username/avalanche-mcp-server
+git clone https://github.com/mzf11125/avalanche-mcp-server
 cd avalanche-mcp-server
 npm install
 npm run dev    # run with tsx (no build needed)

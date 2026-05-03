@@ -193,7 +193,7 @@ L1_BLOCKCHAIN_ID=  # bytes32 blockchain ID
     path: "README.md",
     content: `# ${input.l1_name}
 
-Avalanche L1 — Chain ID: ${input.chain_id}
+Avalanche L1 - Chain ID: ${input.chain_id}
 Native Token: ${input.native_token_name} (${input.native_token_symbol})
 
 ## Setup
