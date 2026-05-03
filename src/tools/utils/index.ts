@@ -7,7 +7,7 @@ import { ScaffoldFile } from "../../types/index.js";
 const CONTRACT_ADDRESSES: Record<string, Record<string, string>> = {
   mainnet: {
     teleporter: "0x253b2784c75e510dD0fF1da844684a1aC0aa5fcf",
-    "teleporter-registry": "0xF86Cb19Ad8405AEFa7d09C778215D2Cb6eBfB228",
+    "teleporter-registry": "0x7C43605E14F391720e1b37E49C78C4b03A488d98",
     wavax: "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
     "native-minter-precompile": "0x0200000000000000000000000000000000000001",
     "fee-manager-precompile": "0x0200000000000000000000000000000000000003",

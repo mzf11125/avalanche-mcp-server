@@ -1,10 +1,19 @@
 {
-  "name": "avalanche-mcp-server",
+  "name": "@dedanzi/avalanche-mcp-server",
   "version": "0.1.0",
   "description": "MCP server for live Avalanche network data — L1 stats, ICM messages, ICTT transfers, validator info, and L1 scaffolding",
   "main": "dist/index.js",
   "bin": {
     "avalanche-mcp-server": "dist/index.js"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE",
+    ".env.example"
+  ],
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "tsc",
