@@ -3,14 +3,14 @@
 
 **Version:** 1.0  
 **Status:** Draft  
-**Program Target:** Retro9000 — Avalanche L1 & Infrastructure Tooling Round  
+**Program Target:** Retro9000 - Avalanche L1 & Infrastructure Tooling Round  
 **Next Snapshot Deadline:** July 14, 2026
 
 ---
 
 ## 1. Overview
 
-`avalanche-mcp-server` is a Model Context Protocol (MCP) server that gives AI agents live access to Avalanche network data and developer utilities — directly inside any MCP-compatible tool (Claude Desktop, Cursor, Windsurf, etc.).
+`avalanche-mcp-server` is a Model Context Protocol (MCP) server that gives AI agents live access to Avalanche network data and developer utilities - directly inside any MCP-compatible tool (Claude Desktop, Cursor, Windsurf, etc.).
 
 It is the companion to [`avalanche_agent_skills`](https://github.com/your-username/avalanche_agent_skills). Where the skills provide static knowledge, the MCP server provides live, queryable data and code generation.
 
@@ -41,10 +41,10 @@ It is the companion to [`avalanche_agent_skills`](https://github.com/your-userna
 
 ## 4. Non-Goals
 
-- No web UI or REST API — MCP only
-- No wallet signing or key management — read-only + local generation
+- No web UI or REST API - MCP only
+- No wallet signing or key management - read-only + local generation
 - No support for non-Avalanche chains
-- No paid tiers — fully free and open-source
+- No paid tiers - fully free and open-source
 
 ---
 
@@ -171,7 +171,7 @@ Fetch recent ICM (Teleporter) messages with filtering.
 
 Delivery status of a specific ICM message.
 
-**Input:** `message_id` (bytes32) OR `source_tx_hash` — one required.
+**Input:** `message_id` (bytes32) OR `source_tx_hash` - one required.
 
 **Output:**
 ```json
@@ -247,7 +247,7 @@ ICTT-deployed tokens with home and remote chain info.
 
 #### `scaffold_l1_deployment`
 
-Generate a complete deployment scaffold for a new Avalanche L1. **No network call — fully local.**
+Generate a complete deployment scaffold for a new Avalanche L1. **No network call - fully local.**
 
 **Input:**
 | Field | Type | Default | Description |
@@ -263,10 +263,10 @@ Generate a complete deployment scaffold for a new Avalanche L1. **No network cal
 | `admin_address` | `string` | `"0xYourAdminAddress"` | Admin/pre-funded address |
 
 **Output:** Array of files to write:
-- `genesis.json` — complete genesis with fee config, precompiles, and alloc
-- `hardhat.config.ts` — configured for the new L1 + Fuji
-- `.env.example` — required environment variables
-- `README.md` — setup and deploy instructions
+- `genesis.json` - complete genesis with fee config, precompiles, and alloc
+- `hardhat.config.ts` - configured for the new L1 + Fuji
+- `.env.example` - required environment variables
+- `README.md` - setup and deploy instructions
 
 ---
 
@@ -344,10 +344,10 @@ Operational status of AvaCloud and Avalanche network services.
 ## 7. Configuration
 
 ```env
-# Optional — enables higher rate limits and additional data fields
+# Optional - enables higher rate limits and additional data fields
 AVACLOUD_API_KEY=
 
-# Optional — override default RPC endpoints
+# Optional - override default RPC endpoints
 AVAX_MAINNET_RPC=https://api.avax.network/ext/bc/C/rpc
 AVAX_FUJI_RPC=https://api.avax-test.network/ext/bc/C/rpc
 
@@ -463,8 +463,8 @@ avalanche-mcp-server/
 | Criterion | How This Addresses It |
 |-----------|----------------------|
 | Open-source | MIT license |
-| Publicly usable | `npx avalanche-mcp-server` — zero install friction |
-| ICM/ICTT integration | 5 dedicated ICM/ICTT tools — maximum emphasis on Retro9000's preferred protocols |
+| Publicly usable | `npx avalanche-mcp-server` - zero install friction |
+| ICM/ICTT integration | 5 dedicated ICM/ICTT tools - maximum emphasis on Retro9000's preferred protocols |
 | Live on mainnet | Queries mainnet by default |
 | Developer tooling | `scaffold_l1_deployment` directly accelerates L1 builder onboarding |
 | Technical merit | 13 tools, typed with Zod, tested, builds clean |

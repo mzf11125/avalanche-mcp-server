@@ -17,8 +17,8 @@ Every comment or issue posted to GitHub during triage **must** include the follo
 
 ## Reference docs
 
-- [AGENT-BRIEF.md](AGENT-BRIEF.md) — how to write durable agent briefs
-- [OUT-OF-SCOPE.md](OUT-OF-SCOPE.md) — how the `.out-of-scope/` knowledge base works
+- [AGENT-BRIEF.md](AGENT-BRIEF.md) - how to write durable agent briefs
+- [OUT-OF-SCOPE.md](OUT-OF-SCOPE.md) - how the `.out-of-scope/` knowledge base works
 
 ## Labels
 
@@ -66,9 +66,9 @@ Example requests:
 
 When the maintainer asks for an overview, query GitHub and present a summary grouped into three buckets:
 
-1. **Unlabeled issues** — new, no labels at all. These have never been triaged.
-2. **`needs-triage` issues** — maintainer needs to evaluate or continue evaluating.
-3. **`needs-info` issues with new activity** — the reporter has commented since the last triage notes comment. Check comment timestamps to determine this.
+1. **Unlabeled issues** - new, no labels at all. These have never been triaged.
+2. **`needs-triage` issues** - maintainer needs to evaluate or continue evaluating.
+3. **`needs-info` issues with new activity** - the reporter has commented since the last triage notes comment. Check comment timestamps to determine this.
 
 Display counts per group. Within each group, show issues oldest first (longest-waiting gets attention first). For each issue, show: number, title, age, and a one-line summary of the issue body.
 
@@ -82,7 +82,7 @@ Before presenting anything to the maintainer:
 
 - Read the full issue: body, all comments, all labels, who reported it, when
 - If there are prior triage notes comments (from previous sessions), parse them to understand what has already been established
-- Explore the codebase to build context — understand the domain, relevant interfaces, and existing behavior related to the issue
+- Explore the codebase to build context - understand the domain, relevant interfaces, and existing behavior related to the issue
 - Read `.out-of-scope/*.md` files and check if this issue matches or is similar to a previously rejected concept
 
 ### Step 2: Present a recommendation
@@ -91,7 +91,7 @@ Tell the maintainer:
 
 - **Category recommendation:** bug or enhancement, with reasoning
 - **State recommendation:** where this issue should go, with reasoning
-- If it matches a prior out-of-scope rejection, surface that: "This is similar to `.out-of-scope/concept-name.md` — we rejected this before because X. Do you still feel the same way?"
+- If it matches a prior out-of-scope rejection, surface that: "This is similar to `.out-of-scope/concept-name.md` - we rejected this before because X. Do you still feel the same way?"
 - A brief summary of what you found in the codebase that's relevant
 
 Then wait for the maintainer's direction. They may:
@@ -108,9 +108,9 @@ If the issue is categorized as a bug, attempt to reproduce it before starting a 
 - Read the reporter's reproduction steps (if provided)
 - Explore the codebase to understand the relevant code paths
 - Try to reproduce the bug: run tests, execute commands, or trace the logic to confirm the reported behavior
-- If reproduction succeeds, report what you found to the maintainer — include the specific behavior you observed and where in the code it originates
-- If reproduction fails, report that too — the bug may be environment-specific, already fixed, or the report may be inaccurate
-- If the report lacks enough detail to attempt reproduction, note that — this is a strong signal the issue should move to `needs-info`
+- If reproduction succeeds, report what you found to the maintainer - include the specific behavior you observed and where in the code it originates
+- If reproduction fails, report that too - the bug may be environment-specific, already fixed, or the report may be inaccurate
+- If the report lacks enough detail to attempt reproduction, note that - this is a strong signal the issue should move to `needs-info`
 
 The reproduction attempt informs the /domain-model session and the agent brief. A confirmed reproduction with a known code path makes for a much stronger brief.
 
@@ -122,12 +122,12 @@ If the issue needs to be fleshed out before it's ready for an agent, interview t
 
 Depending on the outcome:
 
-- **ready-for-agent** — post an agent brief comment (see [AGENT-BRIEF.md](AGENT-BRIEF.md))
-- **ready-for-human** — post a comment summarizing the task, what was established during triage, and why it needs human implementation. Use the same structure as an agent brief but note the reason it can't be delegated to an agent (e.g. requires judgment calls, external system access, design decisions, or manual testing).
-- **needs-info** — post triage notes with progress so far and questions for the reporter (see Needs Info Output below)
-- **wontfix (bug)** — post a polite comment explaining why, then close the issue
-- **wontfix (enhancement)** — write to `.out-of-scope/`, post a comment linking to it, then close the issue (see [OUT-OF-SCOPE.md](OUT-OF-SCOPE.md))
-- **needs-triage** — apply the label. Optionally leave a comment if there's partial progress to capture.
+- **ready-for-agent** - post an agent brief comment (see [AGENT-BRIEF.md](AGENT-BRIEF.md))
+- **ready-for-human** - post a comment summarizing the task, what was established during triage, and why it needs human implementation. Use the same structure as an agent brief but note the reason it can't be delegated to an agent (e.g. requires judgment calls, external system access, design decisions, or manual testing).
+- **needs-info** - post triage notes with progress so far and questions for the reporter (see Needs Info Output below)
+- **wontfix (bug)** - post a polite comment explaining why, then close the issue
+- **wontfix (enhancement)** - write to `.out-of-scope/`, post a comment linking to it, then close the issue (see [OUT-OF-SCOPE.md](OUT-OF-SCOPE.md))
+- **needs-triage** - apply the label. Optionally leave a comment if there's partial progress to capture.
 
 ## Workflow: Quick State Override
 
@@ -155,7 +155,7 @@ When moving an issue to `needs-info`, post a comment that captures the interview
 - question 2
 ```
 
-Include everything resolved during the /domain-model session in "established so far" — this work should not be lost. The questions for the reporter should be specific and actionable, not vague ("please provide more info").
+Include everything resolved during the /domain-model session in "established so far" - this work should not be lost. The questions for the reporter should be specific and actionable, not vague ("please provide more info").
 
 ## Resuming Previous Sessions
 
@@ -165,4 +165,4 @@ When triaging an issue that already has triage notes from a previous session:
 2. Parse what was already established
 3. Check if the reporter has answered any outstanding questions
 4. Present the maintainer with an updated picture: "Here's where we left off, and here's what the reporter has said since"
-5. Continue the /domain-model session from where it stopped — do not re-ask resolved questions
+5. Continue the /domain-model session from where it stopped - do not re-ask resolved questions
